@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Review Sentiment Classifier</title>
+</head>
+<body>
+    <h1>Movie Review Sentiment Classifier</h1>
+    <p>Enter a movie review to predict whether it is positive or negative using a PyTorch RNN model.</p>
+
+    <form method="POST" action="/">
+        <div>
+            <textarea name="review" rows="10" cols="60" placeholder="Write your review here..." required>{{ review_text }}</textarea>
+        </div>
+        <br>
+        <div>
+            <button type="submit">Analyze Sentiment</button>
+        </div>
+    </form>
+
+    {% if sentiment %}
+        <hr>
+        <h2>Analysis Result</h2>
+        <p><strong>Sentiment:</strong> {{ sentiment }}</p>
+    {% endif %}
+</body>
+</html>
