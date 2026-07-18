@@ -17,11 +17,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Copy the requirements file first to leverage Docker cache
 COPY requirements.txt .
 
-# Install PyTorch CPU-only version first to keep the image size small, 
-# then install the remaining requirements.
+# Install dependencies using the PyTorch CPU-only index to keep the image small
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu && \
-    pip install --no-cache-dir -r requirements.txt
+    pip install --no-cache-dir -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
 
 # Pre-download NLTK data to speed up container startup
 RUN python -m nltk.downloader punkt stopwords
