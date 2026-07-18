@@ -1,0 +1,25 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.toast
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+Movie_Review.ipynb
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
