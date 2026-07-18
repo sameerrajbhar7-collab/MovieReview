@@ -22,7 +22,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
 
 # Pre-download NLTK data to speed up container startup
-RUN python -m nltk.downloader punkt stopwords
+RUN python -m nltk.downloader punkt stopwords punkt_tab
 
 # Copy the rest of the application code
 COPY . .

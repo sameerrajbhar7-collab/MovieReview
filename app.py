@@ -12,6 +12,7 @@ from nltk.stem import PorterStemmer
 # Ensure NLTK resources are downloaded
 nltk.download('punkt', quiet=True)
 nltk.download('stopwords', quiet=True)
+nltk.download('punkt_tab', quiet=True)
 
 # Preprocessing functions
 def clean_data(text):
